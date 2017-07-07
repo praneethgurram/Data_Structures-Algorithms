@@ -1,6 +1,8 @@
 #include<iostream>
 #include <bits/stdc++.h>
 using namespace std;
+
+class Huffman{
     //Huffman tree
     struct huftree
     {
@@ -28,6 +30,7 @@ using namespace std;
             this->harray = new huftree*[capacity*sizeof(huftree)];
         }
     };
+public:
     void swapnodes(huftree** x, huftree**  y)
     {
         huftree* temp = *x;
@@ -137,15 +140,15 @@ using namespace std;
         printEncodes(top,"");
 
     }
-
+};
 
 int main()
 {
     char harray[] = { 'a', 'b', 'c', 'd', 'e', 'f' };
     int freq[] = { 5, 9, 12, 13, 16, 45 };
     int hsize = sizeof(harray) / sizeof(harray[0]);
-
-    ihuff(harray,freq,hsize);
+    Huffman hf;
+    hf.ihuff(harray,freq,hsize);
 
     return 0;
 }
